@@ -9,7 +9,7 @@ import edu.princeton.cs.introcs.StdOut;
  * @author eric
  *
  */
- 
+ // test Meshal
 public class Dice
 {
 	// Instance fields (variables) may be declared anywhere in class body
