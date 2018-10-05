@@ -48,7 +48,7 @@ public class DieTest {
 	public void test_wrapping_of_predictable_die() {
 		int[] init_values = new int[] {1,2,3};
 		Die die = new Die(init_values);
-		// 4 rolls, should be one
+		// 4 rolls, value should be one
 		die.roll();
 		die.roll();
 		die.roll();
