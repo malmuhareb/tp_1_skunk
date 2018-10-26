@@ -2,7 +2,6 @@
 public class Game {
 	// private int gameID;
 	private int numOfPlayers;
-	private Player player;
 	private Player[] playerArray;
 	private Round round;
 
@@ -38,7 +37,7 @@ public class Game {
 
 
 	public void startRound() {
-		round = new Round();
+		round = new Round(this.playerArray);
 		
 	}
 }
