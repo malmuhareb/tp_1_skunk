@@ -2,6 +2,7 @@
 public class Round {
 	
 private int rID = 0;
+private int RoundScore = 0;
 private Turn turn;
 
 

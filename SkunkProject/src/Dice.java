@@ -18,6 +18,14 @@ public class Dice
 
 	private int lastRoll;
 	private Die die1;
+	public Die getDie1() {
+		return die1;
+	}
+
+	public Die getDie2() {
+		return die2;
+	}
+
 	private Die die2;
 
 	// Constructors (object initializers) also can be declared anywhere
@@ -30,7 +38,7 @@ public class Dice
 
 		this.die1 = new Die();
 		this.die2 = new Die();
-		this.roll();
+		//this.roll();
 	}
 
 	public Dice(Die die1, Die die2) // overloaded constructor

@@ -4,11 +4,25 @@ public class Game {
 	private int numOfPlayers;
 	private Player[] playerArray;
 	private Round round;
+	private int kitty;
+
+	public int getKitty() {
+		return kitty;
+	}
+
+
+
+	public void setKitty(int kitty) {
+		this.kitty = kitty;
+	}
+
+
 
 	public Game(int n) {
 		if (checkNumOfPlayers(n)){
 		numOfPlayers = n;
 		playerArray = new Player[n];
+		kitty = 0;
 		}
 		else numOfPlayers = -1;
 	}
