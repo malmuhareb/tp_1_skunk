@@ -48,19 +48,35 @@ public class Game {
 
 	public void startRound() {
 		round = new Round(this.playerArray);
-		StdOut.println("Play another Round? (Enter 1 or 2) [1:YES | 2:NO ]");
-		int a = StdIn.readInt();
-		if (a == 1){
-			startRound();	
+		printScores(this.playerArray);
+		int a = 1;
+		while (!round.isWinner() && a == 1) {
+
+			StdOut.println("Play another Round? (Enter 1 or 2) [1:YES | 2:NO ]");
+			a = StdIn.readInt();
+
+			if (a == 1){
+			round = new Round(this.playerArray);
+			printScores(this.playerArray);
+			}
+
 		}
-		
-		/*int n = playerArray.length;
-		for (int i = 0; i < n; i++) {
-			round = new Round(playerArray[i]);
-			playerArray[i].getScore();
-		}*/
+
+		printScores(this.playerArray);
+
+		/*
+		 * int n = playerArray.length; for (int i = 0; i < n; i++) { round = new
+		 * Round(playerArray[i]); playerArray[i].getScore(); }
+		 */
 	}
-	public void printWinner(){
-		
+
+	public void printScores(Player[] p) {
+		for (int i = 0; i < p.length; i++) {
+			StdOut.println("Player Name: " + p[i].getName() + "    Player Current Score: " + p[i].getScore());
+			if (p[i].iswFlag()){
+				StdOut.println(p[i].getName() + " IS a WINNER!!!");
+			}
+		}
+
 	}
 }

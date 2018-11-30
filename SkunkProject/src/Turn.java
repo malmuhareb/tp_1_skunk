@@ -15,7 +15,7 @@ public class Turn {
 			TurnStart(player);
 		else
 			StdOut.println("Skipping Inactive player, " + player.getName());
-			
+
 	}
 
 	private void TurnStart(Player player) {
@@ -38,7 +38,7 @@ public class Turn {
 					if (!chipsChecker(player)) {
 						StdOut.println("Sorry " + player.getName() + ", You Have been Disqulified!! ");
 						StdOut.println("You Don't Have Enough Chips to Play!! ");
-						
+
 					}
 					b = 0;
 				} else if (roll.isSkunk()) {
@@ -51,7 +51,6 @@ public class Turn {
 					if (!chipsChecker(player)) {
 						StdOut.println("Sorry " + player.getName() + ", You Have been Disqulified!! ");
 						StdOut.println("You Don't Have Enough Chips to Play!! ");
-						
 
 					}
 					b = 0;
@@ -66,7 +65,6 @@ public class Turn {
 					if (!chipsChecker(player)) {
 						StdOut.println("Sorry " + player.getName() + ", You Have been Disqulified!! ");
 						StdOut.println("You Don't Have Enough Chips to Play!! ");
-						
 
 					}
 					b = 0;
@@ -80,6 +78,8 @@ public class Turn {
 					StdOut.println("Would you like to roll again? (Enter 1 or 2) [1:YES | 2:NO ]");
 					b = StdIn.readInt();
 				}
+			} else {
+				b = 0;
 			}
 
 		} while (b == 1);
@@ -94,7 +94,7 @@ public class Turn {
 
 		if (p.getChips() >= 4)
 			return true;
-		else{
+		else {
 			p.setActive(false);
 			return false;
 		}

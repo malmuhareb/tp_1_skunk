@@ -9,6 +9,10 @@ public class Round {
 	private Turn turn;
 	boolean winner = false;
 
+	public boolean isWinner() {
+		return winner;
+	}
+
 	public Round(Player[] playerArray) {
 		// rID++;
 		startRound(playerArray);
@@ -30,6 +34,7 @@ public class Round {
 			updateScore(playerArray[i], s);
 			kitty += turn.getTurnKitty();
 			if (checkWin(playerArray[i])) {
+				StdOut.println("Final Turn for Remaining Players (Last Chance to Improve your Score).... ");
 
 				for (int z = 1; z < playerArray.length; z++) {
 					index = i++ % playerArray.length;
@@ -38,7 +43,7 @@ public class Round {
 					updateScore(playerArray[i], s);
 
 				}
-				finalScoreCheck(playerArray);
+				 finalScoreCheck(playerArray);
 
 			}
 
