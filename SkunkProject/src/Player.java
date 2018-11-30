@@ -3,6 +3,34 @@ public class Player {
 	private String name;
 	private int pID;
 	private int chips = 50;
+	private int score = 0;
+	private boolean wFlag = false;
+	private boolean active = true;
+	
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+
+	public boolean iswFlag() {
+		return wFlag;
+	}
+
+	public void setwFlag(boolean wFlag) {
+		this.wFlag = wFlag;
+	}
+
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
+	}
+
 	public int getChips() {
 		return chips;
 	}

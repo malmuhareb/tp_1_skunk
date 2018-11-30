@@ -16,6 +16,8 @@ public class SkunkApp {
 			StdOut.println("Number of Players is invalid");
 			StdOut.println("Please Enter the Number of Players: [2 to 8]");
 			skunk = new Game(StdIn.readInt());
+			// to consume the line
+			StdIn.readLine();
 			
 		}
 		
