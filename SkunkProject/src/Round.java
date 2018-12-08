@@ -44,6 +44,7 @@ public class Round {
 
 				}
 				 finalScoreCheck(playerArray);
+				 break;
 
 			}
 
@@ -71,8 +72,9 @@ public class Round {
 		if (player.getScore() >= 100) {
 			StdOut.println(player.getName() + " Won The Round. Would you like to "
 					+ "stop or continue and raise the Goal?" + "(Enter 1 or 2) [1:STOP | 2:CHANGE GOAL]");
-			StdIn.readInt();
-			if (StdIn.readInt() == 1) {
+			//StdIn.readLine();
+			int a = StdIn.readInt();
+			if (a == 1) {
 				winner = true;
 			}
 
