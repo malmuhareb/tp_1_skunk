@@ -112,6 +112,8 @@ public class Turn {
 		}
 
 	}
+	
+	
 
 	public int getTurnKitty() {
 		return turnKitty;

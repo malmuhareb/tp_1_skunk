@@ -61,21 +61,63 @@ public class Game {
 			}
 
 		}
+		roundChipsSettler(this.playerArray);
 
 		printScores(this.playerArray);
+		
+		StdOut.println("Game Ended, Score Leader & winner is: ");
+		StdOut.println(highScore(this.playerArray).getName());
+		
 
-		/*
-		 * int n = playerArray.length; for (int i = 0; i < n; i++) { round = new
-		 * Round(playerArray[i]); playerArray[i].getScore(); }
-		 */
+		
 	}
 
 	public void printScores(Player[] p) {
 		for (int i = 0; i < p.length; i++) {
-			StdOut.println("Player Name: " + p[i].getName() + "    Player Current Score: " + p[i].getScore());
+			StdOut.println("Player Name: " + p[i].getName() + "    Player Current Score: " + p[i].getScore() + "    Player Current Chips: " + p[i].getChips());
 			if (p[i].iswFlag()){
 				StdOut.println(p[i].getName() + " IS a WINNER!!!");
 			}
+		}
+
+	}
+	public Player highScore(Player[] p){
+		int max = p[0].getScore();
+		int index = 0;
+		for (int i = 1 ; i < p.length ; i++){
+			if(p[i].getScore() > max){
+				max = p[i].getScore();
+				index = i;
+			}
+			
+		}
+		return p[index];
+		
+	}
+	private void roundChipsSettler(Player[] p) {
+		int wIndex = 0;
+		for (int z = 0; z < p.length && p[z].iswFlag() ; z++)
+			wIndex = z;
+		for (int i = 0; i < p.length && i != wIndex  ; i++){
+			if (p[i].getScore() == 0){
+				if (p[i].getChips() < 10)
+					p[i].setActive(false);
+				p[wIndex].setChips(p[wIndex].getChips() + p[i].getChips() );
+				p[i].setChips(0);
+			}
+			else if (p[i].getChips() < 5){
+					p[i].setActive(false);
+				p[wIndex].setChips(p[wIndex].getChips() + p[i].getChips() );
+				p[i].setChips(0);
+			}
+			else{
+				p[wIndex].setChips(p[wIndex].getChips() + 5 );
+				p[i].setChips(p[i].getChips() - 5);
+				
+			}
+			
+			
+		
 		}
 
 	}
