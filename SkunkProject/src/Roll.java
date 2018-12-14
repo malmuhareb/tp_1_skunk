@@ -28,6 +28,13 @@ public class Roll {
 		rollScore = dice.getLastRoll();
 		setIndivisualDies();
 	}
+	//predictible roll for testing
+	public Roll(Dice d){
+		//rollID++;
+		d.roll();
+		rollScore = d.getLastRoll();
+		setIndivisualDies();
+	}
 	public void setIndivisualDies() {
 		die1Roll = dice.getDie1().getLastRoll();
 		die2Roll = dice.getDie2().getLastRoll();
@@ -52,7 +59,7 @@ public boolean isSkunk(){
 
 public boolean isSkunkDuce(){
 	
-	if ((die1Roll == 1 && die2Roll == 2) || (die1Roll == 2 && die2Roll == 1)){
+	if (rollScore == 3){
 		isSkunkDuce = true;	
 	}
 	return isSkunkDuce;

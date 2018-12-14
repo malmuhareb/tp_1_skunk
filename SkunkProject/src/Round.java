@@ -37,7 +37,8 @@ public class Round {
 				StdOut.println("Final Turn for Remaining Players (Last Chance to Improve your Score).... ");
 
 				for (int z = 1; z < playerArray.length; z++) {
-					index = i++ % playerArray.length;
+					i++;
+					index = i % (playerArray.length);
 					turn = new Turn(playerArray[index]);
 					s = turn.getTurnScore();
 					updateScore(playerArray[i], s);
@@ -67,7 +68,7 @@ public class Round {
 
 	}
 
-	private boolean checkWin(Player player) {
+	public boolean checkWin(Player player) {
 		// player.getScore();
 		if (player.getScore() >= 100) {
 			StdOut.println(player.getName() + " Won The Round. Would you like to "
